@@ -1,0 +1,29 @@
+<app-default-login-layout
+    title="Welcome! Log in to your account."
+    primaryBtnText="Login Now"
+    secondaryBtnText="Signup Now"
+    (submit)="submit()"
+    (navigate)="navigate()"
+    [disablePrimaryBtn]="!loginForm.valid"
+>
+    <form [formGroup]="loginForm">
+        <app-input
+            formControlName="identity"
+            inputName="identity"
+            type="identity"
+            label="Username"
+            placeholder="your identity 234566"
+        >
+            <img src="/assets/svg/username.svg"/>
+        </app-input>
+        <app-input
+            formControlName="password"
+            inputName="password"
+            type="password"
+            label="Password"
+        >
+        <img src="/assets/svg/password-user.svg"/>
+    </app-input>
+    <span></span>
+    </form>
+</app-default-login-layout>
