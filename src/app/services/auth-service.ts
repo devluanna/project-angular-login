@@ -6,13 +6,19 @@ import { Injectable } from '@angular/core';
 export class AuthService {
   private user = {
     first_name: '',
-    last_name: ''
+    last_name: '',
+    email: '',
+    role: '',
+    status:''
   };
 
   
-  setUser(firstName: string, lastName: string): void {
+  setUser(firstName: string, lastName: string, email: string, role: string, status: string): void {
     this.user.first_name = firstName;
     this.user.last_name = lastName;
+    this.user.email = email;
+    this.user.role = role;
+    this.user.status = status;
     console.log(firstName)
   }
 
@@ -24,6 +30,18 @@ export class AuthService {
 
   getLastName(): string {
     return this.user.last_name;
+  }
+
+  getEmail(): string {
+    return this.user.email;
+  }
+
+  getRole(): string {
+    return this.user.role;
+  }
+
+  getStatus(): string {
+    return this.user.status;
   }
 
   constructor() {}
