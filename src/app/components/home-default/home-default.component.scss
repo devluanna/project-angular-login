@@ -1,67 +1,36 @@
 @import 'src/styles/variables';
 
 main {
+    background-color: #F5F5F5;
     display: flex;
     flex-direction: column;
     height: 100vh;
 }
 
-nav {
-    background-color: #C9C9C9;
+
+.main-container {
+    background-color: #F5F5F5;
+    display: flex;
+    flex: 1;
+    height: 100vh;
+}
+
+
+.content {
+    background-color: transparent;
     width: 100%;
-    height: 90px;
     display: flex;
-    align-items: center;
-    box-shadow: 1px 0px 10px rgba(0, 0, 0, 0.1);
-    border-bottom: 2px solid rgba(0, 0, 0, 0.1);
+    justify-content: center;
+    padding-top: 1em;
+    overflow: auto;
 }
 
-.div-control-logo {
-    width: auto;
-    padding-left: 5em;
-    display: flex;
-    position: relative;
-    height: auto;
-}
 
-.logo-text {
-    color: #929292;
-    font-family: $font-primary;
-    width: auto;
-    font-weight: 400;
-    text-align: right;
-    padding-right: 0.5em;
-    border-right: 0.19em solid $primary-color;
-    position: relative;
+//** HEADER FOR PROFILE ** //
 
-    span {
-        display: block;
-        font-size: 1.7em;
-        line-height: 20px;
-    }
-}
-
-.div-control-box-infos {
-    display: flex;
-    gap: 40px;
-    align-items: center;
-    width: 100%;
-    justify-content: flex-end;
-    padding-right: 2em;
-}
-
-.icon-logout {
-    justify-content: flex-end;
-}
-
-.box-infos {
-    gap: 20px;
-    display: flex;
-}
-
-.user-name {
-    width: 73px;
-    height: 73px;
+.profile-user {
+    width: 120px;
+    height: 120px;
     background-color: #D9D9D9;
     border-radius: 100%;
     align-items: center;
@@ -77,74 +46,99 @@ nav {
         text-align: center;
         align-items: center;
     }
+
+    &.available {
+        border: 3px solid $vailable-color;
+    }
+
+    &.unavailable {
+        border: 3px solid $unavailable-color;
+    }
+
 }
 
-.main-container {
+.header-profile {
+    padding: 2em;
+    background-color: white;
+    width: 95%;
+    height: 200px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 3px;
+}
+
+.div-control-profile {
+    background-color: #FCFCFC;
     display: flex;
-    flex: 1;
-    height: 100vh;
 }
 
-
-.content {
-    background-color: transparent;
-    width: 100%;
-    overflow: auto;
+.infos-basics {
+    padding-left: 1em;
 }
 
+.name {
+    margin-bottom: 0.5em;
+    color: #3D3D3D;
 
-// ** SUBMENU FOR NAVBAR  ** //
-
-.settings-submenu {
-    position: absolute;
-    background-color: #fff;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    padding: 1em;
-    border-radius: 4px;
-    top: 90px;
-    width: 225px;
-    font-family: $font-primary;
-    font-size: 0.8em;
-    z-index: 1000;
-
-}
-
-.title-submenu {
-    display: flex;
-    align-items: center;
-    margin-bottom: 1em;
-    text-transform: uppercase;
-    font-weight: 500;
-    img {
-        padding-right: 0.3em;
+    span {
+        line-height: 20px;
+        display: block;
+        font-weight: 600;
     }
 }
 
-.settings-submenu a {
-    display: flex;
-    align-items: center;
-   // width: 290px;
-    padding: 0.5em 0;
-    color: #333;
-    text-decoration:underline;
-    img {
-        padding-right: 0.3em;
+.email {
+    margin-bottom: 0.5em;
+    color: #3D3D3D;
 
+    span {
+        line-height: 20px;
+        display: block;
+        font-weight: 600;
     }
 }
 
 
-.settings-submenu a:hover {
-    background-color: #f5f5f5;
+.role {
+    color: #3D3D3D;
+
+    span {
+        line-height: 20px;
+        display: block;
+        font-weight: 600;
+    }
 }
 
-.close-btn {
-    position: absolute;
-    top: 5px;
-    right: 10px;
-    border: none;
-    background: none;
-    cursor: pointer;
-    font-size: 1.2em;
-    color: #999;
+
+/* Mídia para tornar responsivo */
+
+@media  (max-width: 1055px) {
+    .profile-user {
+        width: 120px;
+        height: 110px;
+        background-color: #D9D9D9;
+        border-radius: 100%;
+        align-items: center;
+        display: flex;
+        justify-content: center;
+        text-transform: uppercase;
+    
+        span {
+            font-family: $font-primary;
+            font-size: 1.7em;
+            font-weight: 600;
+            color: #A5A5A5;
+            text-align: center;
+            align-items: center;
+        }
+    
+        &.available {
+            border: 3px solid $vailable-color;
+        }
+    
+        &.unavailable {
+            border: 3px solid $unavailable-color;
+        }
+    
+    }
+    
 }

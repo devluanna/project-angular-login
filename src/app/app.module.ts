@@ -12,6 +12,8 @@ import { provideToastr } from 'ngx-toastr';
 import { HomeDefaultComponent } from './components/home-default/home-default.component';
 import { CommonModule } from '@angular/common';
 import { SidebarComponent } from './components/sidebar/sidebar.component';
+import { SubmenuNavbarComponent } from './components/submenu-navbar/submenu-navbar.component';
+import { NavbarComponent } from './components/navbar/navbar.component';
 
 
 @NgModule({
@@ -19,6 +21,7 @@ import { SidebarComponent } from './components/sidebar/sidebar.component';
   AppComponent,
   HomeDefaultComponent,
   SidebarComponent,
+  NavbarComponent
   ],
   imports: [
     BrowserModule,

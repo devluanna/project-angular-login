@@ -1,64 +1,42 @@
 <main>
-  <nav class="navbar">
-    <div class="div-control-logo">
-      <div class="logo-text">
-        <span>People</span>
-        <span style="font-weight: 600">Hub</span>
-      </div>
-    </div>
-
-    <div class="div-control-box-infos">
-      <div class="box-infos">
-        <img
-          style="cursor: pointer"
-          src="/assets/svg/navbar/notification.svg"
-        />
-
-        <img
-          style="cursor: pointer"
-          src="/assets/svg/navbar/settings.svg"
-          (click)="toggleSettingsMenu()"
-        />
-
-        <div
-          class="settings-submenu"
-          *ngIf="isSubMenuOpen"
-          (mouseleave)="toggleSettingsMenu()"
-        >
-          <div class="title-submenu">
-            <img src="/assets/svg/submenu-navbar/configurations.svg" /><span
-              >Settings</span
-            >
-          </div>      
-
-          <a href="#link1">
-            <img src="/assets/svg/submenu-navbar/profile.svg" /> My profile</a
-          >
-
-          <a href="#link2"
-            ><img src="/assets/svg/submenu-navbar/password-lock.svg" />Password
-            Management</a
-          >
-
-          <button class="close-btn" (click)="toggleSettingsMenu()">X</button>
-        </div>
-
-        <div class="user-name">
-          <span>{{userInitials}}</span>
-        </div>
-      </div>
-
-      <div class="icon-logout">
-        <img style="cursor: pointer" src="/assets/svg/navbar/logout.svg" (click)="logout()" />
-      </div>
-    </div>
-  </nav>
+  <app-navbar></app-navbar>
 
   <div class="main-container">
     <app-sidebar></app-sidebar>
 
     <div class="content">
-      <ng-content></ng-content>
+      <div class="header-profile">
+
+        <div class="div-control-profile">
+
+          <div 
+          [ngClass]="{'available': userStatus === 'AVAILABLE', 'UNAVAILABLE': userStatus === 'UNAVAILABLE'}" 
+          class="profile-user" 
+        >
+          <span>{{ userInitials }}</span>
+        </div>
+
+        <div class="infos-basics">
+          <div class="name">
+            <span>Name</span>
+            <span style="font-weight: 400; text-transform: capitalize; color:#939393;">{{userFullName}}</span>
+          </div>
+
+          <div class="email">
+            <span>Email</span>
+            <span style="font-weight: 400; text-transform: capitalize; color:#939393;">{{userEmail}}</span>
+          </div>
+
+          <div class="role">
+            <span>Role</span>
+            <span style="font-weight: 400; text-transform: capitalize; color:#939393;">{{userRole}}</span>
+          </div>
+        </div>
+
+      </div>
+        <ng-content></ng-content>
+      </div>
+     
     </div>
   </div>
 </main>
