@@ -10,9 +10,9 @@ Typescript
 
 ![alt text](image-3.png)
 <br /><br />
-![alt text](image-2.png)
-<br /><br />
 ![alt text](image-1.png)
+<br /><br />
+![alt text](image-4.png)
 <br /><br />
 
 </br>

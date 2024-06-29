@@ -111,5 +111,39 @@
     width: 70px;
     min-width:70px;
   }
+  .icon-close-open {
+    display: none;
+  }
+
+  .sidebar-link a:hover {
+    width:auto;
+    left:0px;
+    span {
+      display: inline;
+      left:20px;
+      padding:0.2em;
+      height:auto;
+      position: relative;
+      background-color: white;
+      color: #A5A5A5;
+    }
+   }
+
+   .sidebar-link a {
+    display: flex;
+    align-items: center;
+    padding-left:0.5em;
+    span {
+      display: none;
+    }
+    img {
+        padding-right: 0.3em;
+  
+    }
+  }
+
+  .search-input::placeholder {
+    color: transparent; 
+  }
 
 }
