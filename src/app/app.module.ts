@@ -9,19 +9,18 @@ import { routes } from '../app/app-routing.module';
 import { provideHttpClient, withFetch } from '@angular/common/http';
 import { provideAnimations } from '@angular/platform-browser/animations'
 import { provideToastr } from 'ngx-toastr';
-import { HomeDefaultComponent } from './components/home-default/home-default.component';
 import { CommonModule } from '@angular/common';
 import { SidebarComponent } from './components/sidebar/sidebar.component';
-import { SubmenuNavbarComponent } from './components/submenu-navbar/submenu-navbar.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
+import { HeaderProfileComponent } from './components/header-profile/header-profile.component';
 
 
 @NgModule({
   declarations: [
   AppComponent,
-  HomeDefaultComponent,
   SidebarComponent,
-  NavbarComponent
+  NavbarComponent,
+  HeaderProfileComponent
   ],
   imports: [
     BrowserModule,
