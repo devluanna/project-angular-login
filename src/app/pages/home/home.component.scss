@@ -37,9 +37,16 @@ main {
 
 /* Mídia para tornar responsivo */
 
-@media  (max-width: 700px) {
+@media  (max-width: 900px) {
     .header-profile {
-        height: 350px;
+        height:450px;
+        padding: 1em;
+    }
+}
+
+@media (min-width: 701px) and (max-width:900px) {
+    .header-profile {
+        height:350px;
         padding: 1em;
     }
 }

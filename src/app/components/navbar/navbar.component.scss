@@ -49,7 +49,7 @@ nav {
 }
 
 .box-infos {
-    gap:20px;
+    gap: 20px;
     display: flex;
 }
 
@@ -82,6 +82,7 @@ nav {
     }
 
 }
+
 // ** SUBMENU FOR NAVBAR  ** //
 
 .settings-submenu {
@@ -139,25 +140,45 @@ nav {
     color: #999;
 }
 
-.div-control-status {
+.div-control-status-role {
     width: 100%;
     display: flex;
+    align-items: center;
+    justify-content: space-between;
     padding-left: 0.3em;
 }
 
-.status-user {
-    border-radius: 100%;
-    display: flex;
-    align-items: center;
+
+.user-role {
     text-transform: uppercase;
-    margin-bottom:0.5em;
+    align-items: start !important;
     span {
-        padding-left:1.5em;
         font-family: $font-primary;
         font-size: 0.9em;
-        font-weight: 600;
+        font-weight: 700;
         color: #3d3d3d;
     }
+}
+
+.div-status {
+    align-items: center;
+    justify-content: center;
+}
+
+.user-status {
+    width: 100%;
+    height: 100%;
+    span {
+    text-transform: uppercase;
+    padding-left: 0.8em;
+    font-family: $font-primary;
+    font-size: 0.9em;
+    font-weight: 500;
+    color: #3d3d3d;}
+}
+
+.color-status {
+    border-radius: 100%;
 
     &.available {
         background-color: $vailable-color;

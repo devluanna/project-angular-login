@@ -13,15 +13,12 @@ import { UserService } from 'src/app/services/user-service';
 })
 export class NavbarComponent {
   userInitials: string = ''; 
-  userFullName: string = '';
-  userEmail: string = '';
   userRole: string = '';
   userStatus: string = '';
 
   isSubMenuOpen: boolean = false;
 
   constructor(
-    private authService: AuthService,
     private logoutService: LogoutService,
     private userService: UserService
   ) { }
@@ -33,8 +30,6 @@ export class NavbarComponent {
       this.userService.getUserInfo(userId).subscribe(
         (user) => {
           this.userInitials = `${user.first_name.charAt(0)} ${user.last_name.charAt(0)}`;
-          this.userFullName = `${user.first_name} ${user.last_name}`;
-          this.userEmail =  `${user.email}`;
           this.userRole =  `${user.role}`;
           this.userStatus =  `${user.status}`;
         },
