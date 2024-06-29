@@ -8,13 +8,13 @@ Angular
 Typescript
 <br />
 
-![alt text](image-3.png)
+![alt text](screen-login.png)
 <br /><br />
-![alt text](image-1.png)
+![alt text](screen-user.png)
 <br /><br />
-![alt text](image-4.png)
+![alt text](screen-user-submenuopen.png)
 <br /><br />
-
+![alt text](screen-responsive.png)
 </br>
 
 🔗 Link figma: https://www.figma.com/design/8abn9FA0Kq7MACo9gPe4rc/Untitled?node-id=0-1&t=4GH42ISO98QY86lB-0

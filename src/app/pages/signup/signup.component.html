@@ -1,0 +1,51 @@
+<app-signup-layout
+  title="Sign up to our system!"
+  primaryBtnText="Sign up"
+  secondaryBtnText="Back and Sign in"
+  (submit)="submit()"
+  (navigate)="navigate()"
+  [disablePrimaryBtn]="!signupForm.valid"
+>
+  <form [formGroup]="signupForm">
+    <app-input
+      formControlName="first_name"
+      inputName="firstNname"
+      type="text"
+      label="First Name"
+      placeholder="Bonequinha"
+    >
+      <img src="/assets/svg/signup-input/username-signup.svg" />
+    </app-input>
+    <app-input
+      formControlName="last_name"
+      inputName="lastName"
+      type="text"
+      label="Last Name"
+      placeholder="Cinza"
+    >
+    <img src="/assets/svg/signup-input/username-signup.svg" />
+    </app-input>
+    <app-input
+      formControlName="email"
+      inputName="email"
+      type="email"
+      label="Email"
+      placeholder="bonequinhacinza@peoplehub.com"
+      [hasError]="signupForm.controls['email'].hasError('emailExists')"
+      errorMessage="Email already exists!"
+    >
+      <img src="/assets/svg/signup-input/mail.svg" />
+    </app-input>
+    <app-input
+    formControlName="role"
+    inputName="role"
+    type="text"
+    label="Role"
+    placeholder="ADMIN or USER"
+  >
+    <img src="/assets/svg/signup-input/role.svg" />
+  </app-input>
+
+    <span></span>
+  </form>
+</app-signup-layout>

@@ -1,6 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { DefaultLoginLayoutComponent } from './default-login-layout.component';
+import { DefaultLoginLayoutComponent } from './login-layout.component';
 
 describe('DefaultLoginLayoutComponent', () => {
   let component: DefaultLoginLayoutComponent;

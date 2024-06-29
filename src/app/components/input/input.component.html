@@ -9,6 +9,8 @@
             [placeholder]="placeholder"
             [value]="value"
             (input)="onInput($event)"
-        />
+            [ngClass]="{'has-error': hasError}">
+       
     </div>
+    <div class="error-message" *ngIf="hasError">{{ errorMessage }}</div>
 </div>
