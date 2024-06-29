@@ -1,0 +1,45 @@
+@import 'src/styles/variables';
+
+main {
+    background-color: #F5F5F5;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+}
+
+.main-container {
+    background-color: #F5F5F5;
+    display: flex;
+    flex: 1;
+    height: 100vh;
+}
+
+.content {
+    background-color: transparent;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    padding-top: 1em;
+    overflow: auto;
+}
+
+// HEADER FOR PROFILE
+
+.header-profile {
+    padding: 2em;
+    background-color: white;
+    width: 88.5%;
+    height: 200px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 3px;
+    font-size: 0.9em;
+}
+
+/* Mídia para tornar responsivo */
+
+@media  (max-width: 700px) {
+    .header-profile {
+        height: 350px;
+        padding: 1em;
+    }
+}

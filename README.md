@@ -8,8 +8,13 @@ Angular
 Typescript
 <br />
 
+![alt text](image-3.png)
+<br /><br />
+![alt text](image-2.png)
+<br /><br />
+![alt text](image-1.png)
+<br /><br />
 
-![image](https://github.com/devluanna/project-angular-login/assets/119416976/a0c43d05-7da7-4ff8-bd53-9e1dca8a9f1a)
 </br>
 
 🔗 Link figma: https://www.figma.com/design/8abn9FA0Kq7MACo9gPe4rc/Untitled?node-id=0-1&t=4GH42ISO98QY86lB-0

@@ -103,3 +103,13 @@
     font-size: 0.9em;
     outline: none;
   }
+
+  /* Mídia para tornar responsivo */
+
+@media  (max-width: 1055px) {
+  .sidebar {
+    width: 70px;
+    min-width:70px;
+  }
+
+}

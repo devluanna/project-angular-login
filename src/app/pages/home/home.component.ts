@@ -1,31 +1,32 @@
+import { CommonModule } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
-import { HomeDefaultComponent } from 'src/app/components/home-default/home-default.component';
+import { HeaderProfileComponent } from 'src/app/components/header-profile/header-profile.component';
+import { NavbarComponent } from 'src/app/components/navbar/navbar.component';
+import { SidebarComponent } from 'src/app/components/sidebar/sidebar.component';
 import { AuthService } from 'src/app/services/auth-service';
 import { UserService } from 'src/app/services/user-service';
 
 @Component({
   selector: 'app-user-auth',
   standalone: true,
-  imports: [HomeDefaultComponent],
+  imports: [CommonModule, SidebarComponent, NavbarComponent, HeaderProfileComponent],
   templateUrl: './home.component.html',
   styleUrl: './home.component.scss'
 })
 export class HomeComponent implements OnInit {
-  userFullName: string = '';
+  userRole: string = '';  
 
   constructor(
-    private authService: AuthService,
     private userService: UserService
-  ) {}
+  ) { }
 
   ngOnInit(): void {
     const userId = sessionStorage.getItem('userId');
-
+  
     if (userId) {
       this.userService.getUserInfo(userId).subscribe(
         (user) => {
-          this.userFullName = `${user.first_name} ${user.last_name}`;
-          console.log("NOME", this.userFullName)
+          this.userRole =  `${user.role}`;
         },
         (error) => {
           console.error('Erro ao obter informações do usuário', error);
@@ -33,7 +34,8 @@ export class HomeComponent implements OnInit {
       );
     } else {
       console.error('ID do usuário não encontrado na sessão');
-      
     }
   }
+
+
 }
