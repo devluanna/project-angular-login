@@ -1,11 +1,11 @@
 import { Component } from '@angular/core';
 import { FormControl, FormGroup, FormRecord, ReactiveFormsModule, Validators } from '@angular/forms';
-import { DefaultLoginLayoutComponent } from 'src/app/components/default-login-layout/default-login-layout.component';
 import { InputComponent } from 'src/app/components/input/input.component';
 import { Router } from '@angular/router';
 import { LoginService } from 'src/app/services/login-service';
 import { ToastrService } from 'ngx-toastr';
 import { identityValidator } from './validador-indentity';
+import { LoginLayoutComponent } from 'src/app/components/login-layout-component/login-layout.component';
 
 interface LoginForm {
   identity: FormControl,
@@ -18,7 +18,7 @@ interface LoginForm {
   imports: [
     ReactiveFormsModule,
     InputComponent,
-    DefaultLoginLayoutComponent
+    LoginLayoutComponent
   ],
   providers:[
     LoginService
@@ -44,10 +44,10 @@ export class LoginComponent {
   submit(){
     this.loginService.login(this.loginForm.value.identity, this.loginForm.value.password).subscribe({
       next: () => {
-        this.toastService.success("Login feito com sucesso!");
+        this.toastService.success("Login successfully!");
         this.router.navigate(['user']);
       },
-      error: () => this.toastService.error("Erro inesperado! Tente novamente mais tarde")
+      error: () => this.toastService.error("Unexpected error! Try again later")
     })
   }
 
