@@ -30,11 +30,14 @@ interface SignupForm {
 export class SignupComponent {
   signupForm!: FormGroup<SignupForm>;
   errorMessage: string = '';
+  modalRef:string = '';
+  isModalOpen: boolean = true;  
+  successMessage: string = '';
 
   constructor(
     private router: Router,
     private registerService: RegisterService,
-    private toastService: ToastrService,
+    private toastService: ToastrService
   ){
     this.signupForm = new FormGroup({
       first_name: new FormControl('', [Validators.required, Validators.minLength(3)]),
@@ -52,12 +55,12 @@ export class SignupComponent {
       this.signupForm.value.role
     ).subscribe({
       next: () => {
-        //this.openSuccessModal();
        this.toastService.success("Registration completed successfully!");
         this.router.navigate(['signup']);
       },
       error: (err) => {
-        if (err.status === 500) { 
+        if (err.status === 500) {
+          this.isModalOpen = true;
           this.errorMessage = "Email already exists!";
           this.signupForm.controls['email'].setErrors({ 'emailExists': true });
           console.log("errorMessage")
@@ -68,6 +71,10 @@ export class SignupComponent {
     });
   }
 
+  closeModal() {
+    this.isModalOpen = false;
+  }
+  
   navigate(){
     this.router.navigate(["login"])
   }

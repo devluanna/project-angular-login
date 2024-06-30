@@ -13,6 +13,7 @@ import { CommonModule } from '@angular/common';
 import { SidebarComponent } from './components/sidebar/sidebar.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { HeaderProfileComponent } from './components/header-profile/header-profile.component';
+import { SuccessModalComponent } from './components/success-modal/success-modal.component';
 
 
 @NgModule({
@@ -20,7 +21,8 @@ import { HeaderProfileComponent } from './components/header-profile/header-profi
   AppComponent,
   SidebarComponent,
   NavbarComponent,
-  HeaderProfileComponent
+  HeaderProfileComponent,
+  SuccessModalComponent
   ],
   imports: [
     BrowserModule,
