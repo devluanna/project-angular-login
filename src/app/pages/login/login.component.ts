@@ -1,10 +1,10 @@
 import { Component } from '@angular/core';
-import { FormControl, FormGroup, FormRecord, ReactiveFormsModule, Validators } from '@angular/forms';
+import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { InputComponent } from 'src/app/components/input/input.component';
 import { Router } from '@angular/router';
 import { LoginService } from 'src/app/services/login-service';
 import { ToastrService } from 'ngx-toastr';
-import { identityValidator } from './validador-indentity';
+import { identityValidator } from '../../validators/validador-indentity';
 import { LoginLayoutComponent } from 'src/app/components/login-layout-component/login-layout.component';
 
 interface LoginForm {

@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component, Input } from '@angular/core';
+import { Component, Input, EventEmitter, Output  } from '@angular/core';
 
 @Component({
   selector: 'app-success-modal',
@@ -9,11 +9,12 @@ import { Component, Input } from '@angular/core';
   styleUrl: './success-modal.component.scss'
 })
 export class SuccessModalComponent {
-  @Input() successMessage: string = '';
+  @Input() registeredEmail: string = '';
   @Input() isOpen: boolean = false;
+  @Output() closeModal = new EventEmitter<void>();
 
-  closeModal() {
-    this.isOpen = false;
+  onClose() {
+    this.closeModal.emit();
   }
 
 }

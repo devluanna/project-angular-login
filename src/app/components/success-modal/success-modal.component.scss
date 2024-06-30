@@ -27,14 +27,14 @@
   // Title
   .header-modal {
     background-color:#BCE4A9;
-    height:70px;
+    height:55px;
     display: flex;
     align-items: center;
     justify-content: space-between;
   }
 
    .title-modal {
-    padding-left:0.8em;
+    padding-left:1.3em;
     font-weight: 500;
     font-size: 1.2em;
     color:#5BAF33;
@@ -57,40 +57,40 @@
   }
 
   .section-content {
-    padding:1.1em;
+  display:block;
+  padding:1.4em;
+  }
+
+  .message-success {
     display: flex;
     width: 100%;
     align-items: center;
-    //background-color: red;
-
   }
 
   .icon-success {
     display: flex;
-    //background-color: yellow;
     img {  align-items: center;
-      width: 35px;
-      height: 35px;
+      width: 30px;
+      height: 30px;
     }
   }
 
   .primary-message {
     font-size: 1em;
-    padding-left: 1em;
-    text-align: justify;
-    width:88%;
+    padding-left: 0.7em;
+    text-align:start;
     span {
-      //text-transform: uppercase;
       color:#5BAF33;
       font-weight: 700;
+      word-break: break-word;
    }
   }
 
    .secondary-message {
     font-size: 1em;
-    width:92%;
-    padding-left:1.1em;
     display: flex;
+    padding-top:1.5em;
+    margin-bottom:1em;
     align-items: center;
     text-align: justify;
     span {
@@ -102,18 +102,16 @@
   .div-btn {
     border-top:2px solid #EFEFEF;
     //background-color: red;
-    width: 90%;
-    padding-left: 1.1em;
-    margin:1.1em;
+    padding-top:0.5em;
+    height:100%;
     display: flex;
     justify-content: center;
     align-items: center;
   }
 
   button {
-    margin-top:20px;
     font-family: $font-primary;
-    width: 15%;
+    width: 25%;
     border-radius: 8px;
     font-size: 16px;
     font-weight: 500;
@@ -133,3 +131,19 @@
     }
 
   }
+
+    /* Mídia para tornar responsivo */
+
+@media  (max-width: 700px) {
+  .modal-content {
+    background-color: #fefefe;
+    margin: 15% auto;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    border-radius:5px;
+    width: 80%;
+    height:350px;
+    max-width: 600px;
+    position: relative;
+  }
+}
+  
