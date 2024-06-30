@@ -2,14 +2,15 @@
   <div class="modal-content">
     <div class="header-modal">
       <div class="title-modal">User Registration Successfully!</div>
-      <div class="close" (click)="closeModal()">&times;</div>
+      <span class="close" (click)="onClose()">&times;</span>
     </div>
     <div class="section-content">
+    <div class="message-success">
       <div class="icon-success">
         <img src="/assets/svg/utils/success.svg" />
       </div>
       <div class="primary-message">
-        The user with email <span>bonequinhacinzaXemail.com</span> was
+        The user with email <span>{{ registeredEmail }}</span> was
         registered in our system.
       </div>
     </div>
@@ -19,13 +20,13 @@
         and spam folder of the email you used to register.
       </span>
     </div>
+
     <div class="div-btn">
     <button
       class="btn-primary"
-      (click)="closeModal()"
+      (click)="onClose()"
     >
       close
     </button>
-    <p>{{ successMessage }}</p>
-  </div></div>
+  </div></div>  </div>
 </div>

@@ -42,11 +42,13 @@
     type="text"
     label="Role"
     placeholder="ADMIN or USER"
+    [hasError]="signupForm.controls['role'].hasError('invalidRole')"
+    errorMessage="This role does not exist, please try ADMIN or USER!"
   >
     <img src="/assets/svg/signup-input/role.svg" />
   </app-input>
 
     <span></span>
   </form>
-  <app-success-modal [successMessage]="successMessage" [isOpen]="isModalOpen" (closeModal)="closeModal()"></app-success-modal>
+  <app-success-modal [registeredEmail]="registeredEmail" [isOpen]="isModalOpen" (closeModal)="closeModal()"></app-success-modal>
 </app-signup-layout>
