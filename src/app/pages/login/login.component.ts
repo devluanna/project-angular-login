@@ -6,6 +6,7 @@ import { LoginService } from 'src/app/services/login-service';
 import { ToastrService } from 'ngx-toastr';
 import { identityValidator } from '../../validators/validador-indentity';
 import { LoginLayoutComponent } from 'src/app/components/login-layout-component/login-layout.component';
+import { ModalRecoveryPasswordComponent } from 'src/app/components/modal-recovery-password/modal-recovery-password.component';
 
 interface LoginForm {
   identity: FormControl,
@@ -18,7 +19,8 @@ interface LoginForm {
   imports: [
     ReactiveFormsModule,
     InputComponent,
-    LoginLayoutComponent
+    LoginLayoutComponent,
+    ModalRecoveryPasswordComponent
   ],
   providers:[
     LoginService
@@ -28,6 +30,7 @@ interface LoginForm {
 })
 export class LoginComponent {
   loginForm!: FormGroup<LoginForm>;
+
 
   constructor(
     private router: Router,
@@ -54,6 +57,9 @@ export class LoginComponent {
   navigate(){
     this.router.navigate(["signup"])
   }
+
+
+
 }
 
 

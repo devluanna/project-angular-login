@@ -82,7 +82,7 @@ main {
         width: 100%;
         gap: 10px;
 
-        .divider {
+        .forgot-password {
             margin-top:20px;
             display: flex;
             align-items: center;
@@ -93,6 +93,11 @@ main {
             color: $text-color;
             font-weight: 400;
             text-transform: uppercase;
+
+            span:hover {
+                color:#A2A53B;
+                font-weight: 600;
+            }
 
             div {
                 flex-grow: 1;
@@ -133,18 +138,20 @@ main {
 }
 
 .background {
-    position: absolute;
+    position: fixed; 
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    z-index:-1;
+    z-index: -1;
+    overflow: hidden;
 }
 
 .background-image {
     width: 100%;
     height: 100%;
-    object-fit: cover; 
+    object-fit: cover;
+    object-position: center;
 }
 
 .backopacity {
@@ -228,9 +235,14 @@ main {
 
     .footer {
         position: fixed;
-        background-color: transparent;
+        background-color: #fff;
         border-bottom:4px solid #A2A53B;
         padding: 10px;
+        span {
+            font-family: $font-primary;
+            font-size: $text-size-primary;
+            color: #3d3d3d;
+        }
     }
 
 

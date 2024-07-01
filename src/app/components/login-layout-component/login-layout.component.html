@@ -15,9 +15,9 @@
             <ng-content></ng-content>
 
             <div class="btn-wrapper">
-                <div class="divider">
+                <div class="forgot-password">
                     <div></div>
-                    <span>Forgot password?</span>
+                    <span style="cursor:pointer;" (click)="openRecoveryPassword()">Forgot password?</span>
                     <div></div>
                 </div>
                 <button 
@@ -40,7 +40,10 @@
         </div>
     </div>
 
+    <app-modal-recovery-password [isOpen]="isModalOpen" (closeModal)="closeModal()"></app-modal-recovery-password>
+
     <div class="footer">
         <span>Terms of Use | Browser and Display Compatibility Copyright © 2024 </span>
     </div>
+    
 </main>
