@@ -11,8 +11,9 @@ import { SignupLayoutComponent } from 'src/app/components/signup-layout-componen
 import { RegisterService } from 'src/app/services/register-service';
 import { ToastrService } from 'ngx-toastr';
 import { CommonModule } from '@angular/common';
-import { SuccessModalComponent } from 'src/app/components/success-modal/success-modal.component';
+
 import { roleValidator } from 'src/app/validators/validator-role';
+import { SuccessModalComponent } from './success-modal/success-modal.component';
 
 interface SignupForm {
   first_name: FormControl;
@@ -75,18 +76,15 @@ export class SignupComponent {
         next: () => {
           this.isModalOpen = true;
           this.registeredEmail = this.signupForm.value.email;
-          this.toastService.success('Registration completed successfully!');
           this.router.navigate(['signup']);
         },
         error: (err) => {
           if (err.status === 500) {
             this.errorMessage = 'Email already exists!';
             this.signupForm.controls['email'].setErrors({ emailExists: true });
-            console.log('errorMessage');
           } else if (err.status === 500) {
             this.errorMessage = 'This role does not exist, please try ADMIN or USER!';
             this.signupForm.controls['role'].setErrors({ invalidRole: true });
-            console.log('errorMessage');
           } else {
             this.toastService.error('Unexpected error! Try again later');
           }
@@ -99,6 +97,7 @@ export class SignupComponent {
     this.signupForm.reset(); 
     window.location.reload();
   }
+
   navigate() {
     this.router.navigate(['login']);
   }

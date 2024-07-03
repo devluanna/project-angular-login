@@ -13,10 +13,7 @@ export class RegisterService {
   register(first_name: string, last_name: string, email: string, role:string){
     return this.httpClient.post<any>(`${this.apiUrl}/register`, { first_name, last_name, email, role }).pipe(
       tap((response) => {
-        sessionStorage.setItem("auth-token", response.token);
-        sessionStorage.setItem("userId", response.id_user.toString());
-        console.log("token", response.token);
-        console.log("id_user", response.id_user);
+        console.log("Request made successfully!");
       })
     );
   }

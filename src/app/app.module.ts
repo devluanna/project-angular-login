@@ -13,7 +13,8 @@ import { CommonModule } from '@angular/common';
 import { SidebarComponent } from './components/sidebar/sidebar.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { HeaderProfileComponent } from './components/header-profile/header-profile.component';
-import { SuccessModalComponent } from './components/success-modal/success-modal.component';
+import { SuccessModalComponent } from './pages/signup/success-modal/success-modal.component';
+import { ModalDefaultComponent } from './components/modal-default/modal-default.component';
 
 
 @NgModule({
@@ -22,7 +23,8 @@ import { SuccessModalComponent } from './components/success-modal/success-modal.
   SidebarComponent,
   NavbarComponent,
   HeaderProfileComponent,
-  SuccessModalComponent
+  SuccessModalComponent,
+  ModalDefaultComponent
   ],
   imports: [
     BrowserModule,

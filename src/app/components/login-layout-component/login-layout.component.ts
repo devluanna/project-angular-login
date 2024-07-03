@@ -1,5 +1,5 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
-import { ModalRecoveryPasswordComponent } from '../modal-recovery-password/modal-recovery-password.component';
+import { ModalRecoveryPasswordComponent } from '../../pages/recovery-password/modal-recovery-password.component';
 import { CommonModule } from '@angular/common';
 
 @Component({
@@ -18,12 +18,11 @@ export class LoginLayoutComponent {
   @Output("submit") onSubmit = new EventEmitter();
   @Output("navigate") onNavigate = new EventEmitter();
 
-  isModalOpen: boolean = true;
-  
+  isModalOpen: boolean = false;
+
   submit(){
     this.onSubmit.emit();
   }
-  
 
   navigate(){
     this.onNavigate.emit();

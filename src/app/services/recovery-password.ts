@@ -11,11 +11,12 @@ export class RecoveryPasswordService {
   constructor(private httpClient: HttpClient) { }
 
   recoveryPassword(email: string){
-    return this.httpClient.put<any>(`${this.apiUrl}/reset-password`, { email }).pipe(
-      tap((response) => {
-        sessionStorage.setItem("auth-token", response.token);
-        sessionStorage.setItem("userId", response.id_user.toString());
+    return this.httpClient.put(`${this.apiUrl}/reset-password`, { email }, { responseType: 'text' }).pipe(
+      tap((response: string) => {
+        console.log('Response from server:', response);
       })
     );
   }
+
+
 }
