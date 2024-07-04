@@ -1,0 +1,15 @@
+<app-modal-default
+  [headerBackgroundColor]="'#BCE4A9'"
+  [headerTextColor]="'#5BAF33'"
+  [closeTextColor]="'#5BAF33'"
+  titleModal="Email was sent successfully!"
+  srcIcon="/assets/svg/utils/success.svg"
+  primaryMessageText=" The email with your new password has been sent to the following email address: {{ registeredEmail }} "
+  secondaryMessageText="Please check your inbox or spam box, if not, contact support peoplehuba.admin@peoplehub.com"
+  [borderColorPrimaryBtn]="'1px solid #5BAF33'"
+  [colorTextPrimaryBtn]="'#5BAF33'"
+  primaryBtnText="cancel"
+  secondaryBtnText=""
+  (closeModal)="closeModal()"
+  *ngIf="isOpen"
+></app-modal-default>

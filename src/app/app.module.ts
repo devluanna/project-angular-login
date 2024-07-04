@@ -15,6 +15,7 @@ import { NavbarComponent } from './components/navbar/navbar.component';
 import { HeaderProfileComponent } from './components/header-profile/header-profile.component';
 import { SuccessModalComponent } from './pages/signup/success-modal/success-modal.component';
 import { ModalDefaultComponent } from './components/modal-default/modal-default.component';
+import { EmailSuccessfullySentModal } from './pages/recovery-password/email-successfully-sent-modal/email-successfully-sent-modal';
 
 
 @NgModule({
@@ -24,7 +25,8 @@ import { ModalDefaultComponent } from './components/modal-default/modal-default.
   NavbarComponent,
   HeaderProfileComponent,
   SuccessModalComponent,
-  ModalDefaultComponent
+  ModalDefaultComponent,
+  EmailSuccessfullySentModal
   ],
   imports: [
     BrowserModule,
