@@ -49,9 +49,21 @@ nav {
 }
 
 .box-infos {
-    gap: 20px;
     display: flex;
+    img {
+        margin-right:1.6em;
+    }
 }
+
+  .notification-badge {
+    position: absolute;
+    right:242px;
+    top:24px;
+    width: 15px;
+    height: 15px;
+    background-color: red;
+    border-radius: 50%;
+  }
 
 
 .user-name {

@@ -3,11 +3,12 @@ import { Component } from '@angular/core';
 import { AuthService } from 'src/app/services/auth-service';
 import { LogoutService } from 'src/app/services/logout-service';
 import { UserService } from 'src/app/services/user-service';
+import { NotificationNavbarComponent } from '../notification-navbar/notification-navbar.component';
 
 @Component({
   selector: 'app-navbar',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, NotificationNavbarComponent],
   templateUrl: './navbar.component.html',
   styleUrl: './navbar.component.scss'
 })
@@ -15,8 +16,11 @@ export class NavbarComponent {
   userInitials: string = ''; 
   userRole: string = '';
   userStatus: string = '';
+  userSubStatus: string = '';
 
   isSubMenuOpen: boolean = false;
+
+  isNotificationOpen: boolean = true;
 
   constructor(
     private logoutService: LogoutService,
@@ -32,6 +36,7 @@ export class NavbarComponent {
           this.userInitials = `${user.first_name.charAt(0)} ${user.last_name.charAt(0)}`;
           this.userRole =  `${user.role}`;
           this.userStatus =  `${user.status}`;
+          this.userSubStatus =  `${user.subStatus}`;
         },
         (error) => {
           console.error('Erro ao obter informações do usuário', error);
@@ -45,6 +50,11 @@ export class NavbarComponent {
   toggleSettingsMenu() {
     this.isSubMenuOpen = !this.isSubMenuOpen;
   }
+
+  toggleNotification() {
+    this.isNotificationOpen = !this.isNotificationOpen;
+  }
+
 
   logout(): void {
     this.logoutService.logout();

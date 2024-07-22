@@ -8,7 +8,21 @@
 
   <div class="div-control-box-infos">
     <div class="box-infos">
-      <img style="cursor: pointer" src="/assets/svg/navbar/notification.svg" />
+      <img
+        class="notification-icon"
+        style="cursor: pointer"
+        src="/assets/svg/navbar/notification.svg"
+        (click)="toggleNotification()"
+      />
+      <span
+        class="notification-badge"
+        *ngIf="userSubStatus !== 'UNLOCKED'"
+      ></span>
+
+      <app-notification-navbar
+        *ngIf="isNotificationOpen"
+        (mouseleave)="toggleNotification()"
+      ></app-notification-navbar>
 
       <img
         style="cursor: pointer"
@@ -27,16 +41,17 @@
         </div>
 
         <div class="div-control-status-role">
-            <div
-              class="color-status"
-              [ngClass]="{
-                available: userStatus === 'AVAILABLE',
-                unavailable: userStatus === 'UNAVAILABLE'
-              }"
-              style="width: 12px; height: 11px"
-            >
+          <div
+            class="color-status"
+            [ngClass]="{
+              available: userStatus === 'AVAILABLE',
+              unavailable: userStatus === 'UNAVAILABLE'
+            }"
+            style="width: 12px; height: 11px"
+          ></div>
+          <div class="user-status">
+            <span>{{ userStatus }}</span>
           </div>
-          <div class="user-status"><span>{{ userStatus }}</span></div>
           <div class="user-role">
             <span>{{ userRole }}</span>
           </div>
