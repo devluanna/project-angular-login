@@ -8,6 +8,7 @@ import { tap } from 'rxjs';
 })
 export class UserService {
   apiUrl: string = "http://localhost:8080/api/user/u/";
+  getUserById: any;
 
   constructor(private httpClient: HttpClient) { }
 

@@ -6,6 +6,8 @@
     (navigate)="navigate()"
     [disablePrimaryBtn]="!loginForm.valid"
 >
+<div class="container-notifications">
+<div class="boxAlertClass" [ngClass]="boxAlertClass"><span>{{ messageAlert }}</span></div></div>
     <form [formGroup]="loginForm">
         <app-input
             formControlName="identity"

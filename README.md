@@ -40,6 +40,8 @@ Screen Responsive:<br/>
 <br />
 ➕ - Registration page with validations and modal
 <br />
+🔓 - Password recovery
+<br />
 ✉️ * Use real email to register. There is an implementation in the API that when you register, an email is sent with your ID and password to log in.*
 <br /><br />
 This project is based on the structure of a project by Developer Fernanda Kipper
@@ -52,4 +54,4 @@ This project is based on the structure of a project by Developer Fernanda Kipper
 <br />
 - Information update
 - Password update
-- Password recovery
+
