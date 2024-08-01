@@ -4,7 +4,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
-import { provideRouter } from '@angular/router';
+import { provideRouter, RouterModule } from '@angular/router';
 import { routes } from '../app/app-routing.module';
 import { provideHttpClient, withFetch } from '@angular/common/http';
 import { provideAnimations } from '@angular/platform-browser/animations'
@@ -16,6 +16,9 @@ import { HeaderProfileComponent } from './components/header-profile/header-profi
 import { SuccessModalComponent } from './pages/signup/success-modal/success-modal.component';
 import { ModalDefaultComponent } from './components/modal-default/modal-default.component';
 import { EmailSuccessfullySentModal } from './pages/recovery-password/email-successfully-sent-modal/email-successfully-sent-modal';
+import { UpdatePasswordComponent } from './pages/update-password/update-password.component';
+import { HomeComponent } from './pages/home/home.component';
+import { LayoutDefaultPagesComponent } from './components/layout-default-pages/layout-default-pages.component';
 
 
 @NgModule({
@@ -26,12 +29,15 @@ import { EmailSuccessfullySentModal } from './pages/recovery-password/email-succ
   HeaderProfileComponent,
   SuccessModalComponent,
   ModalDefaultComponent,
-  EmailSuccessfullySentModal
+  EmailSuccessfullySentModal,
+  UpdatePasswordComponent,
+  LayoutDefaultPagesComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    CommonModule
+    CommonModule,
+    RouterModule
   ],
   providers: [
     provideRouter(routes),

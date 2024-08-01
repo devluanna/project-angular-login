@@ -4,6 +4,8 @@ import { LoginComponent } from './pages/login/login.component';
 import { AuthGuard } from './services/AuthGuard';
 import { HomeComponent } from './pages/home/home.component';
 import { SignupComponent } from './pages/signup/signup.component';
+import { UpdatePasswordComponent } from './pages/update-password/update-password.component';
+import { LayoutDefaultPagesComponent } from './components/layout-default-pages/layout-default-pages.component';
 
 export const routes: Routes = [
   {
@@ -15,17 +17,17 @@ export const routes: Routes = [
     component: SignupComponent,
 
   },
-  {
-    path: 'user',
-    component: HomeComponent,
-    canActivate: [AuthGuard],
-  },
   { path: '', redirectTo: '/login', pathMatch: 'full' },
+  
   {
     path: '',
-    component: HomeComponent,
-    children: [{ path: '', component: HomeComponent }],
-  },
+    component: LayoutDefaultPagesComponent,
+    canActivate: [AuthGuard],
+    children: [
+      { path: 'user', component: HomeComponent },
+      { path: 'update-password', component: UpdatePasswordComponent }
+    ]
+  }
 ];
 
 @NgModule({
