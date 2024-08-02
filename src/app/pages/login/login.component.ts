@@ -70,7 +70,7 @@ export class LoginComponent {
                 this.setNotificationMessage();
               } else {
                 this.toastService.success('Login successfully!');
-                this.router.navigate(['user']);
+                this.router.navigate(['home']);
               }
             });
           }

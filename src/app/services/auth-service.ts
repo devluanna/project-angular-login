@@ -9,24 +9,23 @@ export class AuthService {
     last_name: '',
     email: '',
     role: '',
-    status:''
+    status: ''
   };
 
-  
+  constructor() {}
+
   setUser(firstName: string, lastName: string, email: string, role: string, status: string): void {
     this.user.first_name = firstName;
     this.user.last_name = lastName;
     this.user.email = email;
     this.user.role = role;
     this.user.status = status;
-    console.log(firstName)
+    console.log(firstName);
   }
 
-  
   getFirstName(): string {
     return this.user.first_name;
   }
-
 
   getLastName(): string {
     return this.user.last_name;
@@ -44,8 +43,6 @@ export class AuthService {
     return this.user.status;
   }
 
-  constructor() {}
-
   isAuthenticated(): boolean {
     const authToken = sessionStorage.getItem('auth-token');
     return !!authToken;
@@ -55,5 +52,4 @@ export class AuthService {
     const username = sessionStorage.getItem('username');
     return username !== null ? username : null;
   }
-
 }
