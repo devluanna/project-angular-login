@@ -4,11 +4,12 @@ import { AuthService } from 'src/app/services/auth-service';
 import { LogoutService } from 'src/app/services/logout-service';
 import { UserService } from 'src/app/services/user-service';
 import { NotificationNavbarComponent } from '../notification-navbar/notification-navbar.component';
+import { SubmenuNavbarComponent } from '../submenu-navbar/submenu-navbar.component';
 
 @Component({
   selector: 'app-navbar',
   standalone: true,
-  imports: [CommonModule, NotificationNavbarComponent],
+  imports: [CommonModule, NotificationNavbarComponent, SubmenuNavbarComponent],
   templateUrl: './navbar.component.html',
   styleUrl: './navbar.component.scss'
 })
@@ -18,9 +19,9 @@ export class NavbarComponent {
   userStatus: string = '';
   userSubStatus: string = '';
 
-  isSubMenuOpen: boolean = false;
+  isSubMenuOpen: boolean = true;
 
-  isNotificationOpen: boolean = true;
+  isNotificationOpen: boolean = false;
 
   constructor(
     private logoutService: LogoutService,

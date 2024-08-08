@@ -8,24 +8,21 @@ import {
 import { Router } from '@angular/router';
 import { InputComponent } from 'src/app/components/input/input.component';
 import { SignupLayoutComponent } from 'src/app/components/signup-layout-component/signup-layout.component';
-import { RegisterService } from 'src/app/services/register-service';
 import { ToastrService } from 'ngx-toastr';
 import { CommonModule } from '@angular/common';
 
 import { roleValidator } from 'src/app/validators/validator-role';
 import { SuccessModalComponent } from '../signup/success-modal/success-modal.component';
 import { HomeComponent } from '../home/home.component';
+import { UpdatePasswordService } from 'src/app/services/update-password';
 
-
-interface SignupForm {
-  first_name: FormControl;
-  last_name: FormControl;
-  email: FormControl;
-  role: FormControl;
+interface UpdatePasswordForm {
+  password: FormControl;
+  confirmPassword: FormControl;
 }
 
 @Component({
-  selector: 'app-signup',
+  selector: 'app-update-password',
   standalone: true,
   imports: [
     SignupLayoutComponent,
@@ -35,69 +32,62 @@ interface SignupForm {
     CommonModule,
     HomeComponent,
   ],
-  providers: [RegisterService],
+  providers: [UpdatePasswordService],
   templateUrl: './update-password.component.html',
-  styleUrl: './update-password.component.scss',
+  styleUrls: ['./update-password.component.scss'],
 })
 export class UpdatePasswordComponent {
-  signupForm!: FormGroup<SignupForm>;
+  updatePasswordForm!: FormGroup<UpdatePasswordForm>;
   errorMessage: string = '';
   isModalOpen: boolean = false;
-  registeredEmail: string = '';
+  passwordUser: string = '';
+  passwordConfirmationUser: string = '';
 
   constructor(
     private router: Router,
-    private registerService: RegisterService,
+    private updatePasswordService: UpdatePasswordService,
     private toastService: ToastrService
   ) {
-    this.signupForm = new FormGroup({
-      first_name: new FormControl('', [
+    this.updatePasswordForm = new FormGroup({
+      password: new FormControl('', [
         Validators.required,
-        Validators.minLength(3),
+        Validators.minLength(10),
       ]),
-      last_name: new FormControl('', [
+      confirmPassword: new FormControl('', [
         Validators.required,
-        Validators.minLength(3),
-      ]),
-      email: new FormControl('', [Validators.required, Validators.email]),
-      role: new FormControl('', [
-        Validators.required,
-        roleValidator(['ADMIN', 'USER']),
-      ]),
+        Validators.minLength(10)
+      ])
     });
-  }
 
-  submit() {
-    this.registerService
-      .register(
-        this.signupForm.value.first_name,
-        this.signupForm.value.last_name,
-        this.signupForm.value.email,
-        this.signupForm.value.role
-      )
-      .subscribe({
-        next: () => {
-          this.isModalOpen = true;
-          this.registeredEmail = this.signupForm.value.email;
-          this.router.navigate(['signup']);
-        },
-        error: (err) => {
-          if (err.status === 500) {
-            this.errorMessage = 'Email already exists!';
-            this.signupForm.controls['email'].setErrors({ emailExists: true });
-          } else if (err.status === 500) {
-            this.errorMessage = 'This role does not exist, please try ADMIN or USER!';
-            this.signupForm.controls['role'].setErrors({ invalidRole: true });
-          } else {
-            this.toastService.error('Unexpected error! Try again later');
-          }
-        }
-      });
+   }
+   
+   submit() {
+    if (this.updatePasswordForm.valid) {
+      this.updatePasswordService
+        .updatePassword(
+          this.updatePasswordForm.value.password,
+          this.updatePasswordForm.value.confirmPassword
+        )
+        ?.subscribe({
+          next: () => {
+            this.toastService.success('Password updated successfully!');
+            this.router.navigate(['home']);
+          },
+          error: (err) => {
+            if (this.updatePasswordForm.value.password !== this.updatePasswordForm.value.confirmPassword) {
+              this.errorMessage = 'Passwords are not the same!';
+              this.updatePasswordForm.controls['password'].setErrors({ passwordNotMatch: true });
+            } else (err.status === 500) ;{
+              this.errorMessage = 'Unexpected error! Try again later';
+            }
+            console.error('Error updating password! ', err);
+          },
+        });
+    }
   }
+      
 
   closeModal() {
-    this.isModalOpen = false;
-    this.signupForm.reset(); 
     window.location.reload();
   }
 

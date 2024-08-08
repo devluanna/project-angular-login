@@ -1,0 +1,35 @@
+<div class="settings-submenu">
+  <div class="title-submenu">
+    <img src="/assets/svg/submenu-navbar/configurations.svg" /><span
+      >Settings</span
+    >
+  </div>
+
+  <div class="div-control-status-role">
+    <div
+      class="color-status"
+      [ngClass]="{
+        available: userStatus === 'AVAILABLE',
+        unavailable: userStatus === 'UNAVAILABLE'
+      }"
+      style="width: 12px; height: 11px"
+    ></div>
+    <div class="user-status">
+      <span>{{ userStatus }}</span>
+    </div>
+    <div class="user-role">
+      <span>{{ userRole }}</span>
+    </div>
+  </div>
+
+  <a href="/user">
+    <img src="/assets/svg/submenu-navbar/profile.svg" /> My profile
+  </a>
+
+  <a href="/update-password">
+    <img src="/assets/svg/submenu-navbar/password-lock.svg" />Password
+    Management
+  </a>
+
+  <button class="close-btn" (click)="toggleSettingsMenu()">X</button>
+</div>

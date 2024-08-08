@@ -48,6 +48,11 @@ export class AuthService {
     return !!authToken;
   }
 
+  getUserId(): number | null {
+    const userId = sessionStorage.getItem('userId');
+    return userId ? parseInt(userId, 10) : null;
+  }
+
   getUsername(): string | null {
     const username = sessionStorage.getItem('username');
     return username !== null ? username : null;
