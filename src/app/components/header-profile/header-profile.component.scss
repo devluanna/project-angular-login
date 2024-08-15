@@ -79,6 +79,7 @@
     color: $text-color-secondary;
     margin-bottom: 0.9em;
 
+
     span {
         display: block;
         font-weight: 600;
@@ -90,6 +91,7 @@
         display: flex;
         text-transform: capitalize;
         color: $text-color-simple;
+        text-transform: none;
     }
 }
 

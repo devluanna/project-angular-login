@@ -4,9 +4,12 @@
         border-radius: 5px;
         padding-top: 1em;
         overflow: auto;
-    
+        width:auto;
+        height: auto;
 
+    
         &.alert-red {
+            font-size: 0.8em;
             background-color: #f8d7da;
             color: #721c24;
         }

@@ -19,7 +19,7 @@ export class NavbarComponent {
   userStatus: string = '';
   userSubStatus: string = '';
 
-  isSubMenuOpen: boolean = true;
+  isSubMenuOpen: boolean = false;
 
   isNotificationOpen: boolean = false;
 
